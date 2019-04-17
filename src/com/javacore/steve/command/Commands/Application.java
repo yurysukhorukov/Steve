@@ -22,6 +22,7 @@ public class Application {
     static ApplicationState currentState;
 
     public static void main(String[] args) {
+        // check changes
         List<String> columns = new ArrayList<>();
         columns.add("id");
         columns.add("firstName");
