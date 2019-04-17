@@ -33,6 +33,9 @@ public class Table {
     // id _______ firstName ______lastName
 
 
+    public List<String> getColumns() {
+        return columns;
+    }
 
     public List<String> selectField(String fieldName){
         int index = columns.indexOf(fieldName);

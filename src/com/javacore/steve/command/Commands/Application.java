@@ -11,6 +11,7 @@ import com.javacore.steve.command.Commands.profile.ProfileView;
 import com.javacore.steve.command.Commands.state.ApplicationState;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -22,6 +23,14 @@ public class Application {
     static ApplicationState currentState;
 
     public static void main(String[] args) {
+        Table table = new Table("Criminals", Arrays.asList("id", "name", "deceased"));
+        Record rec = new Record(table);
+        rec.setValues(new String[]{"100", "Anthony Soprano", "false"});
+        try{
+            System.out.println( rec.getInt("id"));
+        } catch (Record.FieldNotFoundException ex){
+            ex.printStackTrace();
+        }
         // check changes
         List<String> columns = new ArrayList<>();
         columns.add("id");
@@ -40,9 +49,9 @@ public class Application {
         values3.add("3");
         values3.add("Vladimir");
         values3.add("Trump");
-        criminalTable.insert(new Record(values1));
+        /*criminalTable.insert(new Record(values1));
         criminalTable.insert(new Record(values2));
-        criminalTable.insert(new Record(values3));
+        criminalTable.insert(new Record(values3));*/
 
         List<String> result = criminalTable.selectField("firstName");
         for(String s : result){
