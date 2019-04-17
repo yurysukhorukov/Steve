@@ -2,10 +2,20 @@ package com.javacore.steve.command.Commands.profile;
 
 import com.javacore.steve.command.Commands.common.BaseModel;
 
+import java.util.Date;
+
 public class ProfileModel extends BaseModel {
     private int id;
     private String firstName;
     private String lastName;
+    private String nickname;
+    private int numberOfCrimes;
+    private Date dateOfBirth;
+    private boolean deceased;
+    private String description;
+    private String placeOfBirth;
+    private Date dateOfDeath;
+    private String placeOfDeath;
     private boolean active;
 
     public static ProfileModel randomModel(){
